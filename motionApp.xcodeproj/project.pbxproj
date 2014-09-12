@@ -10,6 +10,8 @@
 		187EA7311873CB5B008BC890 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187EA7301873CB5B008BC890 /* UIKit.framework */; };
 		187EA7331873CB5B008BC890 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187EA7321873CB5B008BC890 /* Foundation.framework */; };
 		187EA7351873CB5B008BC890 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187EA7341873CB5B008BC890 /* CoreGraphics.framework */; };
+		38C8676019C348D6008DEA09 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C8675F19C348D6008DEA09 /* CoreData.framework */; };
+		38C8676419C3495C008DEA09 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C8676319C3495C008DEA09 /* CoreDataHelper.m */; };
 		83B602A51884289000E85596 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B602A41884289000E85596 /* CoreLocation.framework */; };
 		83B602A718842EA700E85596 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B602A618842EA700E85596 /* CoreMotion.framework */; };
 		83D7261C189B4156004B9520 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D7261B189B4156004B9520 /* libsqlite3.dylib */; };
@@ -136,10 +138,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		187EA72D1873CB5B008BC890 /* Motion App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Motion App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		187EA72D1873CB5B008BC890 /* motionApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = motionApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		187EA7301873CB5B008BC890 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		187EA7321873CB5B008BC890 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		187EA7341873CB5B008BC890 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		38C8675F19C348D6008DEA09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		38C8676219C3495C008DEA09 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		38C8676319C3495C008DEA09 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
 		83B602A41884289000E85596 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		83B602A618842EA700E85596 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		83D7261B189B4156004B9520 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -229,8 +234,8 @@
 		CE8D91E218C914550012CC2D /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		CE8D91E418C914550012CC2D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CE8D91E518C914550012CC2D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		CE8D91E618C914550012CC2D /* Motion App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Motion App-Info.plist"; sourceTree = "<group>"; };
-		CE8D91E718C914550012CC2D /* Motion App-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Motion App-Prefix.pch"; sourceTree = "<group>"; };
+		CE8D91E618C914550012CC2D /* motionApp-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "motionApp-Info.plist"; sourceTree = "<group>"; };
+		CE8D91E718C914550012CC2D /* motionApp-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "motionApp-Prefix.pch"; sourceTree = "<group>"; };
 		CE8D91E918C914550012CC2D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		CE8D91EA18C914550012CC2D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
 		CE8D91ED18C914550012CC2D /* MotionApp.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = MotionApp.sqlite; sourceTree = "<group>"; };
@@ -314,6 +319,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38C8676019C348D6008DEA09 /* CoreData.framework in Frameworks */,
 				C95AAC54191C8ABF00569A90 /* Security.framework in Frameworks */,
 				83D7261C189B4156004B9520 /* libsqlite3.dylib in Frameworks */,
 				83B602A51884289000E85596 /* CoreLocation.framework in Frameworks */,
@@ -332,7 +338,7 @@
 		187EA7241873CB5B008BC890 = {
 			isa = PBXGroup;
 			children = (
-				CE8D91AD18C914540012CC2D /* MotionApp */,
+				CE8D91AD18C914540012CC2D /* motionApp */,
 				187EA72F1873CB5B008BC890 /* Frameworks */,
 				187EA72E1873CB5B008BC890 /* Products */,
 			);
@@ -341,7 +347,7 @@
 		187EA72E1873CB5B008BC890 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				187EA72D1873CB5B008BC890 /* Motion App.app */,
+				187EA72D1873CB5B008BC890 /* motionApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -349,6 +355,7 @@
 		187EA72F1873CB5B008BC890 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				38C8675F19C348D6008DEA09 /* CoreData.framework */,
 				C95AAC53191C8ABF00569A90 /* Security.framework */,
 				83D7261B189B4156004B9520 /* libsqlite3.dylib */,
 				83E9CC7D1891F63B00F732BD /* CFNetwork.framework */,
@@ -360,6 +367,15 @@
 				187EA7341873CB5B008BC890 /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		38C8676119C3491B008DEA09 /* Core Data classes */ = {
+			isa = PBXGroup;
+			children = (
+				38C8676219C3495C008DEA09 /* CoreDataHelper.h */,
+				38C8676319C3495C008DEA09 /* CoreDataHelper.m */,
+			);
+			name = "Core Data classes";
 			sourceTree = "<group>";
 		};
 		C94A5499191938A40091BE1B /* TcpVC */ = {
@@ -442,9 +458,10 @@
 			name = ResourceClasses;
 			sourceTree = "<group>";
 		};
-		CE8D91AD18C914540012CC2D /* MotionApp */ = {
+		CE8D91AD18C914540012CC2D /* motionApp */ = {
 			isa = PBXGroup;
 			children = (
+				38C8676119C3491B008DEA09 /* Core Data classes */,
 				C95AAC4F191C7D5A00569A90 /* TCP lib */,
 				CE53008A18CD634A0030EADE /* ResourceClasses */,
 				CE53008418CD57670030EADE /* RepaintDelegate */,
@@ -460,14 +477,15 @@
 				CE8D91E218C914550012CC2D /* Default@2x.png */,
 				CE8D91E318C914550012CC2D /* InfoPlist.strings */,
 				CE8D91E518C914550012CC2D /* main.m */,
-				CE8D91E618C914550012CC2D /* Motion App-Info.plist */,
-				CE8D91E718C914550012CC2D /* Motion App-Prefix.pch */,
+				CE8D91E618C914550012CC2D /* motionApp-Info.plist */,
+				CE8D91E718C914550012CC2D /* motionApp-Prefix.pch */,
 				CE8D91E818C914550012CC2D /* NetworkManager */,
 				CE8D91EB18C914550012CC2D /* Resources */,
 				CE8D920D18C914550012CC2D /* View Controllers */,
 				C94A5466191924830091BE1B /* Global.h */,
 				C94A5467191924830091BE1B /* Global.m */,
 			);
+			name = motionApp;
 			path = MotionApp;
 			sourceTree = "<group>";
 		};
@@ -909,9 +927,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		187EA72C1873CB5B008BC890 /* Motion App */ = {
+		187EA72C1873CB5B008BC890 /* motionApp */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 187EA7501873CB5C008BC890 /* Build configuration list for PBXNativeTarget "Motion App" */;
+			buildConfigurationList = 187EA7501873CB5C008BC890 /* Build configuration list for PBXNativeTarget "motionApp" */;
 			buildPhases = (
 				187EA7291873CB5B008BC890 /* Sources */,
 				187EA72A1873CB5B008BC890 /* Frameworks */,
@@ -922,9 +940,9 @@
 			);
 			dependencies = (
 			);
-			name = "Motion App";
+			name = motionApp;
 			productName = MotionApp;
-			productReference = 187EA72D1873CB5B008BC890 /* Motion App.app */;
+			productReference = 187EA72D1873CB5B008BC890 /* motionApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -941,7 +959,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 187EA7281873CB5B008BC890 /* Build configuration list for PBXProject "Motion App" */;
+			buildConfigurationList = 187EA7281873CB5B008BC890 /* Build configuration list for PBXProject "motionApp" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -953,7 +971,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				187EA72C1873CB5B008BC890 /* Motion App */,
+				187EA72C1873CB5B008BC890 /* motionApp */,
 			);
 		};
 /* End PBXProject section */
@@ -1095,6 +1113,7 @@
 				CE8D925C18C914550012CC2D /* RecordCell.m in Sources */,
 				C94A54A5191938A40091BE1B /* TcpPortVC.m in Sources */,
 				CE8D92AB18C914550012CC2D /* ReviewItemVC.m in Sources */,
+				38C8676419C3495C008DEA09 /* CoreDataHelper.m in Sources */,
 				CE8D926B18C914550012CC2D /* main.m in Sources */,
 				CE8D928A18C914550012CC2D /* AccelSettingVC.m in Sources */,
 				CE8D925518C914550012CC2D /* AccelObject.m in Sources */,
@@ -1189,10 +1208,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MotionApp/Motion App-Prefix.pch";
-				INFOPLIST_FILE = "MotionApp/Motion App-Info.plist";
+				GCC_PREFIX_HEADER = "MotionApp/motionApp-Prefix.pch";
+				INFOPLIST_FILE = "MotionApp/motionApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "Motion App";
+				PRODUCT_NAME = motionApp;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1205,10 +1224,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "MotionApp/Motion App-Prefix.pch";
-				INFOPLIST_FILE = "MotionApp/Motion App-Info.plist";
+				GCC_PREFIX_HEADER = "MotionApp/motionApp-Prefix.pch";
+				INFOPLIST_FILE = "MotionApp/motionApp-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
-				PRODUCT_NAME = "Motion App";
+				PRODUCT_NAME = motionApp;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
@@ -1218,7 +1237,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		187EA7281873CB5B008BC890 /* Build configuration list for PBXProject "Motion App" */ = {
+		187EA7281873CB5B008BC890 /* Build configuration list for PBXProject "motionApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				187EA74E1873CB5C008BC890 /* Debug */,
@@ -1227,7 +1246,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		187EA7501873CB5C008BC890 /* Build configuration list for PBXNativeTarget "Motion App" */ = {
+		187EA7501873CB5C008BC890 /* Build configuration list for PBXNativeTarget "motionApp" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				187EA7511873CB5C008BC890 /* Debug */,
