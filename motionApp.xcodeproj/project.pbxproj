@@ -12,6 +12,7 @@
 		187EA7351873CB5B008BC890 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 187EA7341873CB5B008BC890 /* CoreGraphics.framework */; };
 		38C8676019C348D6008DEA09 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38C8675F19C348D6008DEA09 /* CoreData.framework */; };
 		38C8676419C3495C008DEA09 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 38C8676319C3495C008DEA09 /* CoreDataHelper.m */; };
+		38C8677019D5CC5A008DEA09 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38C8676E19D5CC59008DEA09 /* Model.xcdatamodeld */; };
 		83B602A51884289000E85596 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B602A41884289000E85596 /* CoreLocation.framework */; };
 		83B602A718842EA700E85596 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83B602A618842EA700E85596 /* CoreMotion.framework */; };
 		83D7261C189B4156004B9520 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 83D7261B189B4156004B9520 /* libsqlite3.dylib */; };
@@ -145,6 +146,7 @@
 		38C8675F19C348D6008DEA09 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		38C8676219C3495C008DEA09 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
 		38C8676319C3495C008DEA09 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		38C8676F19D5CC5A008DEA09 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		83B602A41884289000E85596 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		83B602A618842EA700E85596 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		83D7261B189B4156004B9520 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
@@ -338,6 +340,7 @@
 		187EA7241873CB5B008BC890 = {
 			isa = PBXGroup;
 			children = (
+				38C8676E19D5CC59008DEA09 /* Model.xcdatamodeld */,
 				CE8D91AD18C914540012CC2D /* motionApp */,
 				187EA72F1873CB5B008BC890 /* Frameworks */,
 				187EA72E1873CB5B008BC890 /* Products */,
@@ -1113,6 +1116,7 @@
 				CE8D925C18C914550012CC2D /* RecordCell.m in Sources */,
 				C94A54A5191938A40091BE1B /* TcpPortVC.m in Sources */,
 				CE8D92AB18C914550012CC2D /* ReviewItemVC.m in Sources */,
+				38C8677019D5CC5A008DEA09 /* Model.xcdatamodeld in Sources */,
 				38C8676419C3495C008DEA09 /* CoreDataHelper.m in Sources */,
 				CE8D926B18C914550012CC2D /* main.m in Sources */,
 				CE8D928A18C914550012CC2D /* AccelSettingVC.m in Sources */,
@@ -1256,6 +1260,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		38C8676E19D5CC59008DEA09 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				38C8676F19D5CC5A008DEA09 /* Model.xcdatamodel */,
+			);
+			currentVersion = 38C8676F19D5CC5A008DEA09 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 187EA7251873CB5B008BC890 /* Project object */;
 }

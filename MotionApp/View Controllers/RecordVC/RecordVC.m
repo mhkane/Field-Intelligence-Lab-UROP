@@ -141,16 +141,12 @@ static int record_Id;
     
     checkinVChasPopped = FALSE;
     
-    //Load context
+    //Initialize the tools needed for saving objects with Core Data. 
     
     AppDelegate *appdelegate = [[UIApplication sharedApplication]delegate];
     coreDataHelper = appdelegate.coreDataHelper;
     context = coreDataHelper.context;
-    NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject" inManagedObjectContext:context];
-    NSManagedObject *newRecord = [[NSManagedObject alloc] initWithEntity:entitydsc insertIntoManagedObjectContext:coreDataHelper.context];
-    NSLog([newRecord description]);
-    [newRecord setValue:@"Test" forKey:@"record_name"];
-    [coreDataHelper saveContext];
+   
     
     
     
@@ -357,6 +353,11 @@ static int record_Id;
         gpsQuality = @"";
         [recordTableView reloadData];
         // TODO: Save persistent here
+        NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject" inManagedObjectContext:context];
+        NSManagedObject *newRecord = [[NSManagedObject alloc] initWithEntity:entitydsc insertIntoManagedObjectContext:coreDataHelper.context];
+        
+        [newRecord setValue:@"Test" forKey:@"record_name"];
+        [coreDataHelper saveContext];
         
         
         

@@ -44,11 +44,7 @@
     
     m_gAryCheckin = @[@"Walking", @"Bus", @"Running", @"Airplane", @"Cycling", @"Train", @"Driving", @"Boat", @"Stationary"];
     m_gIndexCheckin = -1;
-    [[self cdh] setupCoreData];
-    NSLog([self.coreDataHelper.context description]);
-    NSLog([self.coreDataHelper.store description]);
-    
-    
+    [[self cdh] setupCoreData]; //Setup all the core data classes when the app starts
     
     return YES;
 }
