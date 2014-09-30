@@ -316,7 +316,8 @@ static int record_Id;
     {
         //Save
         RecordObject * recordObject = [[RecordObject alloc]init];
-        recordObject.record_name = @"Unnamed Record";
+        NSString *recordName = @"Record from ";
+        recordObject.record_name = [recordName stringByAppendingString:startTime];
         recordObject.record_time = [formatter dateFromString:startTime];
         recordObject.record_duration = counter;
         recordObject.gpsObject = [NSMutableArray arrayWithArray:gpsArray];
@@ -356,7 +357,9 @@ static int record_Id;
         NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject" inManagedObjectContext:context];
         NSManagedObject *newRecord = [[NSManagedObject alloc] initWithEntity:entitydsc insertIntoManagedObjectContext:coreDataHelper.context];
         
-        [newRecord setValue:@"Test" forKey:@"record_name"];
+        
+        [newRecord setValue:recordObject.record_name forKey:@"record_name"];
+  
         [coreDataHelper saveContext];
         
         
