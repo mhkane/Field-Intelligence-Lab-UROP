@@ -6,7 +6,8 @@
 #import "ReviewItemVC.h"
 #import "RecordObject.h"
 #import "DataBaseManager.h"
-
+#import "CoreDataHelper.h"
+#import "AppDelegate.h"
 @interface ReviewVC ()
 {
     NSDateFormatter * formatter;
@@ -33,6 +34,17 @@
     flagForEditBtn = 0;
     formatter = [[NSDateFormatter alloc]init];
     [formatter setDateFormat: @"yyyy-MM-dd HH:mm:ss:SSSS"];
+    AppDelegate *appdel = [[UIApplication sharedApplication] delegate];
+    cdh= appdel.coreDataHelper;
+    context=cdh.context;
+    NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject2" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entitydsc];
+    NSArray *array = [context executeFetchRequest:request error:nil];
+    NSLog([array description]);
+    
+    
+     
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -55,9 +67,15 @@
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ReviewCell" owner:self options:nil] objectAtIndex:0];
     }
-    
-    RecordObject * recordObject = [recordsArray objectAtIndex:indexPath.row];
-    [cell CellTextName:recordObject.record_name CellDate:[formatter stringFromDate:recordObject.record_time]];
+    AppDelegate *appdel = [[UIApplication sharedApplication] delegate];
+    cdh= appdel.coreDataHelper;
+    context=cdh.context;
+    NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject2" inManagedObjectContext:context];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    [request setEntity:entitydsc];
+    NSArray *array = [context executeFetchRequest:request error:nil];
+    NSManagedObject * recordObject = [array objectAtIndex:indexPath.row];
+    [cell CellTextName:[recordObject valueForKey:@"record_name"] CellDate:[recordObject valueForKey:@"record_date"]];
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;

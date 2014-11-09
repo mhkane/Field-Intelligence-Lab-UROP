@@ -85,7 +85,8 @@ NSString *storeFilename = @"motionApp.sqlite";
                                                   URL:[self storeURL]
                                               options:nil error:&error];
     if (!_store) {NSLog(@"Failed to add store. Error: %@", error);abort();}
-    else         {if (debug==1) {NSLog(@"Successfully added store: %@", _store);}}
+    else         {if (debug==1) {NSLog(@"Successfully added store: %@", _store);
+    }}
 }
 - (void)setupCoreData {
     if (debug==1) {
@@ -108,6 +109,17 @@ NSString *storeFilename = @"motionApp.sqlite";
     } else {
         NSLog(@"SKIPPED _context save, there are no changes!");
     }
+}
+
+-(NSString *)recordNameHelper{
+    NSDate* date2 = [NSDate date];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *destinationTimeZone = [NSTimeZone systemTimeZone];
+    formatter.timeZone = destinationTimeZone;
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
+    NSString *recordName = [NSString stringWithFormat:@" Record from %@",date2];
+    return recordName;
 }
 
 

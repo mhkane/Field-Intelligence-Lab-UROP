@@ -314,6 +314,8 @@ static int record_Id;
     }
     else
     {
+        
+       
         //Save
         RecordObject * recordObject = [[RecordObject alloc]init];
         NSString *recordName = @"Record from ";
@@ -354,21 +356,36 @@ static int record_Id;
         gpsQuality = @"";
         [recordTableView reloadData];
         // TODO: Save persistent here
-        NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject" inManagedObjectContext:context];
+        NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject2" inManagedObjectContext:context];
+        NSLog([NSString stringWithFormat:@"%@",entitydsc.description]);
         NSManagedObject *newRecord = [[NSManagedObject alloc] initWithEntity:entitydsc insertIntoManagedObjectContext:coreDataHelper.context];
-        
-        
-        [newRecord setValue:recordObject.record_name forKey:@"record_name"];
-  
+        //NSFetchRequest *request = [[NSFetchRequest alloc] init];
+        //[request setEntity:entitydsc];
+        //NSError *fetchError;
+        //NSArray *fetchArray = [coreDataHelper.context executeFetchRequest:request error:&fetchError];
+        //NSManagedObject *oldRecord = [fetchArray lastObject];
+        //NSObject *object = [NSKeyedUnarchiver unarchiveObjectWithData:[oldRecord valueForKey:@"accelObject"]];
+      //  NSLog(@" Here is the description %@",[object description]);
+        //NSLog(@"%lu",(unsigned long)[fetchArray count]);
+        //NSNumber *ObjectId = [NSNumber numberWithUnsignedInt:[fetchArray count]];
+        //int value = [ObjectId intValue];
+        //ObjectId = [NSNumber numberWithInt:value+1];
+        [newRecord setValue:[coreDataHelper recordNameHelper] forKey:@"record_name"];
+        //[newRecord setValue:recordObject.record_time forKey:@"record_time"];
+        [newRecord setValue:[NSNumber numberWithInt:recordObject.record_duration] forKey:@"record_duration"];
+        [newRecord setValue:[NSNumber numberWithBool:isAccOn]forKey:@"isAccOn"];
+        [newRecord setValue:[NSNumber numberWithBool:isComOn] forKey:@"isComOn"];
+        [newRecord setValue:[NSNumber numberWithBool:isGyroOn] forKey:@"isGyroOn"];
+        //[newRecord setValue:[NSKeyedArchiver archivedDataWithRootObject:recordObject.gpsObject] forKey:@"gpsObject"];
+        //[newRecord setValue:[NSKeyedArchiver archivedDataWithRootObject:recordObject.accelObject]forKey:@"accelObject"];
+        //[newRecord setValue:[NSKeyedArchiver archivedDataWithRootObject:recordObject.gyroScopeObject] forKey:@"gyroScopeObject"];
+        //[newRecord setValue:[NSKeyedArchiver archivedDataWithRootObject:recordObject.compassObject] forKey:@"compassObject"];
+        //[newRecord setValue:ObjectId forKey:@"record_id"];
+        NSLog([newRecord description]);
         [coreDataHelper saveContext];
-        
-        
-        
-        
-        
+        NSLog([coreDataHelper.store description]);
     }
 }
-
 - (void)saveRecord
 {
     dispatch_async(kBgQueue, ^{

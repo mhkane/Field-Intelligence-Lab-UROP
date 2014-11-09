@@ -45,6 +45,22 @@
     m_gAryCheckin = @[@"Walking", @"Bus", @"Running", @"Airplane", @"Cycling", @"Train", @"Driving", @"Boat", @"Stationary"];
     m_gIndexCheckin = -1;
     [[self cdh] setupCoreData]; //Setup all the core data classes when the app starts
+    NSDate* date2 = [NSDate date];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *destinationTimeZone = [NSTimeZone systemTimeZone];
+    formatter.timeZone = destinationTimeZone;
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    [formatter setDateFormat:@"MM/dd/yyyy"];
+    NSLog([NSString stringWithFormat:@" %@",date2]);
+    
+   /* NSDate* date = [NSDate date];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init];
+    NSTimeZone *destinationTimeZone = [NSTimeZone systemTimeZone];
+    formatter.timeZone = destinationTimeZone;
+    [formatter setDateStyle:NSDateFormatterLongStyle];
+    [formatter setDateFormat:@"MM/dd/yyyy hh:mma"];
+    NSString* dateString = [formatter stringFromDate:date];
+    NSLog(dateString);*/
     
     return YES;
 }

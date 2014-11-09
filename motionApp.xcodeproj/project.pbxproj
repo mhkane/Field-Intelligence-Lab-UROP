@@ -958,7 +958,7 @@
 				ORGANIZATIONNAME = j_siegel;
 				TargetAttributes = {
 					187EA72C1873CB5B008BC890 = {
-						DevelopmentTeam = UL3YZ7WP8A;
+						DevelopmentTeam = 94HBD439E3;
 					};
 				};
 			};
