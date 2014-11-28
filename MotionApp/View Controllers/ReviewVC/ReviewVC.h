@@ -10,6 +10,7 @@
     IBOutlet UIButton * editBtn;
     CoreDataHelper *cdh;
     NSManagedObjectContext* context;
+    NSMutableArray *records;
     
 }
 

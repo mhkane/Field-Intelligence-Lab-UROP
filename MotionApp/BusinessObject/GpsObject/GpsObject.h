@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GpsObject : NSObject
+@interface GpsObject : NSObject <NSCoding>
 {
     int gps_id;
     int record_id;

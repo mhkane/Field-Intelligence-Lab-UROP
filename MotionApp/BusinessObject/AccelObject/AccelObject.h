@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface AccelObject : NSObject
+@interface AccelObject : NSObject <NSCoding>
 {
     int accel_id;
     int record_id;

@@ -37,11 +37,17 @@
     AppDelegate *appdel = [[UIApplication sharedApplication] delegate];
     cdh= appdel.coreDataHelper;
     context=cdh.context;
-    NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject2" inManagedObjectContext:context];
+    NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject" inManagedObjectContext:context];
     NSFetchRequest *request = [[NSFetchRequest alloc] init];
     [request setEntity:entitydsc];
     NSArray *array = [context executeFetchRequest:request error:nil];
-    NSLog([array description]);
+    NSMutableArray *array2= [[NSMutableArray alloc]init];
+    //  NSManagedObject * recordObject = [array objectAtIndex:indexPath.row];
+    int i =0;
+    for(NSManagedObject *object in array){
+        [array2 addObject:object];
+        NSLog([NSString stringWithFormat:@"%d",i]);}
+    records=array2;
     
     
      
@@ -56,8 +62,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return recordsArray.count;
-}
+    return records.count;}
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -67,15 +72,9 @@
     {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"ReviewCell" owner:self options:nil] objectAtIndex:0];
     }
-    AppDelegate *appdel = [[UIApplication sharedApplication] delegate];
-    cdh= appdel.coreDataHelper;
-    context=cdh.context;
-    NSEntityDescription *entitydsc = [NSEntityDescription entityForName:@"RecordObject2" inManagedObjectContext:context];
-    NSFetchRequest *request = [[NSFetchRequest alloc] init];
-    [request setEntity:entitydsc];
-    NSArray *array = [context executeFetchRequest:request error:nil];
-    NSManagedObject * recordObject = [array objectAtIndex:indexPath.row];
-    [cell CellTextName:[recordObject valueForKey:@"record_name"] CellDate:[recordObject valueForKey:@"record_date"]];
+    NSManagedObject *recordForCell = [records objectAtIndex:indexPath.row];
+    
+   [cell CellTextName:[recordForCell valueForKey:@"record_name"] CellDate:[recordForCell valueForKey:@"record_date"]];
 
     cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
@@ -83,8 +82,15 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+     NSManagedObject *recordForCell = [records objectAtIndex:indexPath.row];
+    RecordObject *newObject = [[RecordObject alloc] init];
+    newObject.isAccOn= (int)[recordForCell valueForKey:@"isAccOn"];
+    newObject.record_name=(NSString *)[recordForCell valueForKey:@"record_name"];
+    newObject.record_duration = (int)[recordForCell valueForKey:@"record_duration"];
+    
     ReviewItemVC * reviewItemVC = [[ReviewItemVC alloc]initWithNibName:@"ReviewItemVC_5" bundle:Nil];
     [reviewItemVC setRecordIndex:(int)indexPath.row];
+    [reviewItemVC setRecordObject:newObject];
     [self.navigationController pushViewController:reviewItemVC animated:YES];
 }
 

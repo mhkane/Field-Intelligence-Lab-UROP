@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.14" systemVersion="13E28" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.14" systemVersion="13F34" minimumToolsVersion="Xcode 4.3" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="AccelObject" syncable="YES">
         <attribute name="accel_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="record_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -30,20 +30,24 @@
         <attribute name="record_id" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="RecordObject2" syncable="YES">
+    <entity name="RecordObject" syncable="YES">
+        <attribute name="accelObject" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="compassObject" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="gpsObject" optional="YES" attributeType="Transformable" syncable="YES"/>
+        <attribute name="gyroscopeObject" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="isAccOn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isComOn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isGyroOn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="record_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="record_duration" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="record_name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="record_time" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="record_time" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="GpsObject" positionX="-36" positionY="9" width="128" height="133"/>
-        <element name="GyroscopeObject" positionX="-36" positionY="54" width="128" height="133"/>
         <element name="AccelObject" positionX="-27" positionY="63" width="128" height="118"/>
         <element name="CompassObject" positionX="-9" positionY="72" width="128" height="118"/>
-        <element name="RecordObject2" positionX="9" positionY="81" width="128" height="150"/>
+        <element name="GpsObject" positionX="-36" positionY="9" width="128" height="133"/>
+        <element name="GyroscopeObject" positionX="-36" positionY="54" width="128" height="133"/>
+        <element name="RecordObject" positionX="9" positionY="81" width="128" height="210"/>
     </elements>
 </model>

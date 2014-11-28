@@ -19,4 +19,5 @@
 - (void)setupCoreData;
 - (void)saveContext;
 - (NSString *)recordNameHelper;
+-(void)reset;
 @end

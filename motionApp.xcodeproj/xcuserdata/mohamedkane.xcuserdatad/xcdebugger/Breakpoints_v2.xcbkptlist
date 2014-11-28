@@ -9,14 +9,14 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "MotionApp/View Controllers/RecordVC/RecordVC.m"
-            timestampString = "436107612.716281"
+            filePath = "MotionApp/BusinessObject/GyroScopeObject/GyroScopeObject.m"
+            timestampString = "438903499.329008"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "362"
-            endingLineNumber = "362"
-            landmarkName = "-actionSheet:clickedButtonAtIndex:"
-            landmarkType = "5">
+            startingLineNumber = "6"
+            endingLineNumber = "6"
+            landmarkName = "@implementation GyroScopeObject"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

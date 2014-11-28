@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CompassObject : NSObject
+@interface CompassObject : NSObject <NSCoding>
 {
     int compass_id;
     int record_id;

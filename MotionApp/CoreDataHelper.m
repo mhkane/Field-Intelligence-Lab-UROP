@@ -110,6 +110,25 @@ NSString *storeFilename = @"motionApp.sqlite";
         NSLog(@"SKIPPED _context save, there are no changes!");
     }
 }
+-(void)reset{
+    NSError * error;
+    // retrieve the store URL
+    NSURL * storeURL = [[_context persistentStoreCoordinator] URLForPersistentStore:[[[_context persistentStoreCoordinator] persistentStores] lastObject]];
+    // lock the current context
+    [_context lock];
+    [_context reset];//to drop pending changes
+    //delete the store from the current managedObjectContext
+    if ([[_context persistentStoreCoordinator] removePersistentStore:[[[_context persistentStoreCoordinator] persistentStores] lastObject] error:&error])
+    {
+        // remove the file containing the data
+        [[NSFileManager defaultManager] removeItemAtURL:storeURL error:&error];
+        //recreate the store like in the  appDelegate method
+        [[_context persistentStoreCoordinator] addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error];//recreates the persistent store
+    }
+    [_context unlock];
+    NSLog(@"Store deleted");
+    //that's it !
+}
 
 -(NSString *)recordNameHelper{
     NSDate* date2 = [NSDate date];

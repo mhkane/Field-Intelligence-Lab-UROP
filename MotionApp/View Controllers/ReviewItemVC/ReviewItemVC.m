@@ -29,7 +29,7 @@ enum {
     NSString * userNameString;
     NSString * passwordString;
     NSUserDefaults * userDefaults;
-    RecordObject* recordObject;
+
 }
 
 @property (nonatomic, assign, readonly ) BOOL              isSending;
@@ -76,8 +76,11 @@ enum {
 
 - (void)setRecordIndex:(int)nIndex
 {
-    m_nIndexRecord = nIndex;
-    recordObject = [recordsArray objectAtIndex:nIndex];
+    //m_nIndexRecord = nIndex;
+    //recordObject = [recordsArray objectAtIndex:nIndex];
+}
+-(void)setRecordObject:(RecordObject *)obj{
+    recordObject=obj;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section

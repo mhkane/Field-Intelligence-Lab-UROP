@@ -3,7 +3,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface GyroScopeObject : NSObject
+@interface GyroScopeObject : NSObject <NSCoding>
 {
     int gyro_id;
     int record_id;
