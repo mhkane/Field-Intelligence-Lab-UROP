@@ -15,7 +15,9 @@
 #import "CloudObject.h"
 
 enum {
-    kSendBufferSize = 32768
+    kSendBufferSize = 32768, 
+    ON=18,
+    OFF=2
 };
 
 
@@ -29,6 +31,8 @@ enum {
     NSString * userNameString;
     NSString * passwordString;
     NSUserDefaults * userDefaults;
+    
+    
 
 }
 
@@ -106,6 +110,7 @@ enum {
     NSString * header = [keysArray objectAtIndex:indexPath.section];
     NSMutableArray * temp = [dic objectForKey:header];
     NSString * text = [temp objectAtIndex:indexPath.row];
+    NSLog([NSString stringWithFormat:@"Here is the record Object and the value %@",[recordObject gpsObject]]);
     if (indexPath.section == 0)
     {
         //Section 0
@@ -129,7 +134,7 @@ enum {
         
         if (indexPath.row == 0)
         {
-            if (recordObject.isGpsOn == 1)
+            if (recordObject.isGpsOn ==ON )
             {
                 [cell CellText:text CellImage:[UIImage imageNamed:@"circle.png"]];
             }
@@ -140,7 +145,7 @@ enum {
         }
         else if (indexPath.row == 1)
         {
-            if (recordObject.isAccOn == 1)
+            if (recordObject.isAccOn ==ON)
             {
                 [cell CellText:text CellImage:[UIImage imageNamed:@"circle.png"]];
             }
@@ -151,7 +156,7 @@ enum {
         }
         else if (indexPath.row == 2)
         {
-            if (recordObject.isComOn == 1)
+            if (recordObject.isComOn ==ON)
             {
                 [cell CellText:text CellImage:[UIImage imageNamed:@"circle.png"]];
             }
@@ -163,7 +168,7 @@ enum {
         }
         else if (indexPath.row == 3)
         {
-            if (recordObject.isGyroOn == 1)
+            if (recordObject.isGyroOn ==ON)
             {
                 [cell CellText:text CellImage:[UIImage imageNamed:@"circle.png"]];
             }

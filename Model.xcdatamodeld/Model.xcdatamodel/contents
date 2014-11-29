@@ -37,6 +37,7 @@
         <attribute name="gyroscopeObject" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="isAccOn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isComOn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="isGpsOn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="isGyroOn" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="record_date" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="record_duration" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
@@ -48,6 +49,6 @@
         <element name="CompassObject" positionX="-9" positionY="72" width="128" height="118"/>
         <element name="GpsObject" positionX="-36" positionY="9" width="128" height="133"/>
         <element name="GyroscopeObject" positionX="-36" positionY="54" width="128" height="133"/>
-        <element name="RecordObject" positionX="9" positionY="81" width="128" height="210"/>
+        <element name="RecordObject" positionX="9" positionY="81" width="128" height="225"/>
     </elements>
 </model>

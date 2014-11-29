@@ -373,6 +373,7 @@ static int record_Id;
         [newRecord setValue:[coreDataHelper recordNameHelper] forKey:@"record_name"];
         [newRecord setValue:recordObject.record_time forKey:@"record_time"];
         [newRecord setValue:[NSNumber numberWithInt:recordObject.record_duration] forKey:@"record_duration"];
+        [newRecord setValue:[NSNumber numberWithInt:isGpsOn] forKey:@"isGpsOn"];
         [newRecord setValue:[NSNumber numberWithBool:isAccOn]forKey:@"isAccOn"];
         [newRecord setValue:[NSNumber numberWithBool:isComOn] forKey:@"isComOn"];
         [newRecord setValue:[NSNumber numberWithBool:isGyroOn] forKey:@"isGyroOn"];

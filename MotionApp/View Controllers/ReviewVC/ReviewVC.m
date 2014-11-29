@@ -84,7 +84,11 @@
 {
      NSManagedObject *recordForCell = [records objectAtIndex:indexPath.row];
     RecordObject *newObject = [[RecordObject alloc] init];
+    newObject.record_time=[recordForCell valueForKey:@"record_time"];
     newObject.isAccOn= (int)[recordForCell valueForKey:@"isAccOn"];
+    newObject.isComOn=(int)[recordForCell valueForKey:@"isComOn"];
+    newObject.isGpsOn=(int)[recordForCell valueForKey:@"isGpsOn"];
+    newObject.isGyroOn=(int)[recordForCell valueForKey:@"isGyroOn"];
     newObject.record_name=(NSString *)[recordForCell valueForKey:@"record_name"];
     newObject.record_duration = (int)[recordForCell valueForKey:@"record_duration"];
     
