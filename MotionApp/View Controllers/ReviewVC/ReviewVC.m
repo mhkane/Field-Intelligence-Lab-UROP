@@ -84,6 +84,11 @@
 {
      NSManagedObject *recordForCell = [records objectAtIndex:indexPath.row];
     RecordObject *newObject = [[RecordObject alloc] init];
+    NSData *gpsObjectData = [[NSData alloc]initWithData:[recordForCell valueForKey:@"gpsObject"]];
+    NSData *accelObjectData = [[NSData alloc]initWithData:[recordForCell valueForKey:@"accelObject"]];
+    NSData *compassObjectData = [[NSData alloc]initWithData:[recordForCell valueForKey:@"compassObject"]];
+    NSData *gyroData = [[NSData alloc] initWithData:[recordForCell valueForKey:@"gyroscopeObject"]];
+    
     newObject.record_time=[recordForCell valueForKey:@"record_time"];
     newObject.isAccOn= (int)[recordForCell valueForKey:@"isAccOn"];
     newObject.isComOn=(int)[recordForCell valueForKey:@"isComOn"];
@@ -91,6 +96,11 @@
     newObject.isGyroOn=(int)[recordForCell valueForKey:@"isGyroOn"];
     newObject.record_name=(NSString *)[recordForCell valueForKey:@"record_name"];
     newObject.record_duration = (int)[recordForCell valueForKey:@"record_duration"];
+    newObject.gpsObject=[NSKeyedUnarchiver unarchiveObjectWithData:gpsObjectData];
+    newObject.accelObject=[NSKeyedUnarchiver unarchiveObjectWithData:accelObjectData];
+    newObject.compassObject = [NSKeyedUnarchiver unarchiveObjectWithData:compassObjectData];
+    newObject.gyroscopeObject=[NSKeyedUnarchiver unarchiveObjectWithData:gyroData];
+    NSLog(@"The type of the object is %@",[newObject.gpsObject class]);
     
     ReviewItemVC * reviewItemVC = [[ReviewItemVC alloc]initWithNibName:@"ReviewItemVC_5" bundle:Nil];
     [reviewItemVC setRecordIndex:(int)indexPath.row];

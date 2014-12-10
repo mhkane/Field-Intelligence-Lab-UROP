@@ -110,7 +110,7 @@ enum {
     NSString * header = [keysArray objectAtIndex:indexPath.section];
     NSMutableArray * temp = [dic objectForKey:header];
     NSString * text = [temp objectAtIndex:indexPath.row];
-    NSLog([NSString stringWithFormat:@"Here is the record Object and the value %@",[recordObject gpsObject]]);
+    NSLog([NSString stringWithFormat:@"Here is the record Object and the value %@",[[recordObject gpsObject] description]]);
     if (indexPath.section == 0)
     {
         //Section 0
@@ -271,7 +271,7 @@ enum {
     
     
     [strFileContent appendFormat:@"\n%@\n ",@"Gyroscope"];
-    for (NSDictionary* diction  in recordObject.gyroScopeObject)
+    for (NSDictionary* diction  in recordObject.gyroscopeObject)
     {
         GyroScopeObject * gyroScopeObject = [diction allValues] && [[diction allValues] count] > 0 ? [[diction allValues] objectAtIndex:0] : nil;
         if (gyroScopeObject)
@@ -650,7 +650,7 @@ enum {
     
     
     [strFileContent appendFormat:@"\r\n%@\r\n ",@"GYRO"];
-    for (NSDictionary* diction  in recordObject.gyroScopeObject)
+    for (NSDictionary* diction  in recordObject.gyroscopeObject)
     {
         GyroScopeObject * gyroScopeObject = [diction allValues] && [[diction allValues] count] > 0 ? [[diction allValues] objectAtIndex:0] : nil;
         if (gyroScopeObject)

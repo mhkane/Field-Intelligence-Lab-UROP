@@ -3,14 +3,14 @@
 
 #import <Foundation/Foundation.h>
 
-@interface RecordObject : NSObject
+@interface RecordObject : NSObject <NSCoding>
 {
     int record_id;
     NSString * record_name;
     NSDate * record_time;
     int record_duration;
     NSMutableArray * gpsObject;
-    NSMutableArray * gyroScopeObject;
+    NSMutableArray * gyroscopeObject;
     NSMutableArray * accelObject;
     NSMutableArray * compassObject;
     NSMutableArray * contextArray;
@@ -26,7 +26,7 @@
 @property(nonatomic, strong) NSDate * record_time;
 @property(nonatomic, assign) int record_duration;
 @property(nonatomic, strong) NSMutableArray * gpsObject;
-@property(nonatomic, strong) NSMutableArray * gyroScopeObject;
+@property(nonatomic, strong) NSMutableArray * gyroscopeObject;
 @property(nonatomic, strong) NSMutableArray * accelObject;
 @property(nonatomic, strong) NSMutableArray * compassObject;
 @property(nonatomic, strong) NSMutableArray * contextArray;

@@ -45,10 +45,10 @@
         <attribute name="record_time" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AccelObject" positionX="-27" positionY="63" width="128" height="118"/>
-        <element name="CompassObject" positionX="-9" positionY="72" width="128" height="118"/>
-        <element name="GpsObject" positionX="-36" positionY="9" width="128" height="133"/>
-        <element name="GyroscopeObject" positionX="-36" positionY="54" width="128" height="133"/>
-        <element name="RecordObject" positionX="9" positionY="81" width="128" height="225"/>
+        <element name="AccelObject" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="CompassObject" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GpsObject" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="GyroscopeObject" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="RecordObject" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
